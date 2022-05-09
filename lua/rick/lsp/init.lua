@@ -5,3 +5,4 @@ end
 
 require("rick.lsp.lsp-installer")
 require("rick.lsp.handlers").setup()
+require "rick.lsp.null-ls"

@@ -48,6 +48,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "akinsho/toggleterm.nvim" -- Toggleterm is a terminal popup window integrate to nvim
+  use "akinsho/bufferline.nvim"
 
 	-- Colorschemes
 	use 'gruvbox-community/gruvbox'
@@ -69,6 +70,7 @@ return packer.startup(function(use)
   -- LSP
   use "neovim/nvim-lspconfig"
   use "williamboman/nvim-lsp-installer"
+  use "jose-elias-alvarez/null-ls.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
