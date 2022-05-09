@@ -4,5 +4,5 @@ if not status_ok then
 end
 
 require("rick.lsp.configs")
+require("rick.lsp.null-ls")
 require("rick.lsp.handlers").setup()
-require "rick.lsp.null-ls"
