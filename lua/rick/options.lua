@@ -1,6 +1,6 @@
 local options = {
 	backup = false,                            -- creates a backup file
-  backupcopy = true,
+ 	backupcopy = "yes",
 	clipboard = "unnamedplus",                 -- allows neovim to access the system clipboard
 	cmdheight = 1,                             -- more space in the neovim command line for displaying messages
 	completeopt = { "menuone", "noselect" },   -- mostly just for cmp
@@ -48,5 +48,4 @@ vim.cmd [[set iskeyword+=-]]
 vim.cmd "colorscheme gruvbox"
 vim.cmd "highlight Normal guibg=none"
 vim.cmd "let g:rainbow_active = 1"
-vim.cmd "set guicursor=i:block"
 
