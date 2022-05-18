@@ -1,9 +1,8 @@
 local options = {
 	backup = false,                            -- creates a backup file
  	backupcopy = "yes",
-	clipboard = "unnamedplus",                 -- allows neovim to access the system clipboard
-	cmdheight = 1,                             -- more space in the neovim command line for displaying messages
-	completeopt = { "menuone", "noselect" },   -- mostly just for cmp
+	--clipboard = "unnamedplus",                 -- allows neovim to access the system clipboard
+	cmdheight = 1,                             -- more space in the neovim command line for displaying messages completeopt = { "menuone", "noselect" },   -- mostly just for cmp
 	conceallevel = 0,                          -- so that `` is visible in markdown files
 	fileencoding = "utf-8",                    -- the encoding written to a file
 	hlsearch = false,                          -- highlight all matches on previous search pattern
@@ -44,8 +43,11 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[set iskeyword+=-]]
-vim.cmd "colorscheme gruvbox"
+vim.cmd "set iskeyword+=-"
+vim.g.tokyonight_style = "night"
+vim.cmd "colorscheme tokyonight"
+vim.cmd "highlight LineNr guifg=#FFFFFF"
 vim.cmd "highlight Normal guibg=none"
 vim.cmd "let g:rainbow_active = 1"
+vim.cmd "set guicursor=i:block"
 
