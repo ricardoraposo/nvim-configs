@@ -56,8 +56,13 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use 'gruvbox-community/gruvbox'
+  use "luisiacc/gruvbox-baby"
 	use 'folke/tokyonight.nvim'
   use 'Mofiqul/dracula.nvim'
+  use "lunarvim/darkplus.nvim"
+  use "sjl/badwolf"
+  use "4513ECHO/vim-colors-hatsunemiku"
+  use "arcticicestudio/nord-vim"
 
 	-- cmp plugins
 	use 'hrsh7th/nvim-cmp'
@@ -88,6 +93,9 @@ return packer.startup(function(use)
 
   -- Comments Plugin
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+  -- Fugitive
+  use 'tpope/vim-fugitive'
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

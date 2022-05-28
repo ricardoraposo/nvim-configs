@@ -22,7 +22,7 @@ vim.g.maplocalleader = " "
 -- Better window nav
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<M-x>", "<C-a>", opts)
+keymap("n", "<C-b>", "<C-a>", opts)
 keymap("n", "<leader>e", ":Lex 20<cr>", opts)
 
 -- Resize with arrows
