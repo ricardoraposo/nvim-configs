@@ -224,6 +224,11 @@ _G.packer_plugins = {
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-colors-hatsunemiku",
     url = "https://github.com/4513ECHO/vim-colors-hatsunemiku"
   },
+  ["vim-commentary"] = {
+    loaded = true,
+    path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-commentary",
+    url = "https://github.com/tpope/vim-commentary"
+  },
   ["vim-fugitive"] = {
     loaded = true,
     path = "/Users/ricardo/.local/share/nvim/site/pack/packer/start/vim-fugitive",

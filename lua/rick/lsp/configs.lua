@@ -5,7 +5,7 @@ end
 
 local lspconfig = require("lspconfig")
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "emmet_ls", "cssmodules_ls", "tailwindcss", "html", "bashls" }
+local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "emmet_ls", "html", "bashls" }
 
 lsp_installer.setup {
   ensure_installed = servers
@@ -17,8 +17,15 @@ for _, server in pairs(servers) do
     capabilities = require("rick.lsp.handlers").capabilities,
   }
   local has_custom_opts, server_custom_opts = pcall(require, "rick.lsp.settings." .. server)
+
+  if server == "emmet_ls" then
+    local emmet_ls_opts = require "rick.lsp.settings.emmet_ls"
+    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
+  end
+
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
   end
+
   lspconfig[server].setup(opts)
 end

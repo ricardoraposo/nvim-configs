@@ -69,13 +69,12 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
 
--- Comment
-keymap("n", "<leader>c", "<cmd>lua require('ts_context_commentstring.internal').update_commentstring()<cr>", opts)
 -- Greatest remaps
 
 keymap("n", "G", "Gzz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>y", '"+ym', opts)
+keymap("n", "<leader><", '0f>ldt<', opts)
 vim.cmd "inoremap , ,<c-g>u"
 vim.cmd "inoremap . .<c-g>u"
 vim.cmd "inoremap ! !<c-g>u"

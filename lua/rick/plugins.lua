@@ -93,6 +93,7 @@ return packer.startup(function(use)
 
   -- Comments Plugin
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'tpope/vim-commentary'
 
   -- Fugitive
   use 'tpope/vim-fugitive'

@@ -44,8 +44,8 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd "set iskeyword+=-"
-vim.g.tokyonight_style = "night"
-vim.cmd "colorscheme tokyonight"
+-- vim.g.tokyonight_style = "night"
+vim.cmd "colorscheme gruvbox"
 vim.cmd "highlight LineNr guifg=#ffffff"
 vim.cmd "highlight Normal guibg=NONE ctermbg=NONE"
 vim.cmd "let g:rainbow_active = 1"
