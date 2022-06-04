@@ -56,13 +56,9 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 	use 'gruvbox-community/gruvbox'
-  use "luisiacc/gruvbox-baby"
 	use 'folke/tokyonight.nvim'
-  use 'Mofiqul/dracula.nvim'
-  use "lunarvim/darkplus.nvim"
-  use "sjl/badwolf"
-  use "4513ECHO/vim-colors-hatsunemiku"
-  use "arcticicestudio/nord-vim"
+  use 'lunarvim/darkplus.nvim'
+  use '4513ECHO/vim-colors-hatsunemiku'
 
 	-- cmp plugins
 	use 'hrsh7th/nvim-cmp'
@@ -81,8 +77,9 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer"
   use "jose-elias-alvarez/null-ls.nvim"
 
-  -- Telescope
+  -- Telescope & Harpoon
   use "nvim-telescope/telescope.nvim"
+  use "ThePrimeagen/harpoon"
 
   -- Treesitter
   use {
@@ -95,7 +92,8 @@ return packer.startup(function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'tpope/vim-commentary'
 
-  -- Fugitive
+  -- Git stuff
+  use "lewis6991/gitsigns.nvim"
   use 'tpope/vim-fugitive'
 
   -- Automatically set up your configuration after cloning packer.nvim

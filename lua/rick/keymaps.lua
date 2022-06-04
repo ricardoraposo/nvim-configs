@@ -19,19 +19,16 @@ vim.g.maplocalleader = " "
 --	 command mode = "c"
 
 -- Normal
--- Better window nav
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-b>", "<C-a>", opts)
+-- Open fiel tree
 keymap("n", "<leader>e", ":Lex 20<cr>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<M-Up>", ":resize +2<CR>", opts)
+keymap("n", "<M-Down>", ":resize -2<CR>", opts)
+keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
+keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
 
--- Navigate buffers
+-- Buffer commands
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>qb", ":bd<CR>", opts)
@@ -67,7 +64,11 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 -- Telescope
 --
 keymap("n", "<C-f>", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<leader>db", "<cmd>lua require'telescope.builtin'.buffers(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>dl", "<cmd>Telescope diagnostics<cr>", opts)
+keymap("n", "<leader>dn", "<cmd>Telescope find_files cwd=~/.config/nvim/<cr>", opts)
+keymap("n", "<leader>ds", "<cmd>Telescope find_files cwd=~/.local/share/nvim/site/pack/packer/start/friendly-snippets/snippets<cr>", opts)
+
 
 -- Greatest remaps
 
@@ -75,6 +76,7 @@ keymap("n", "G", "Gzz", opts)
 keymap("n", "Y", "y$", opts)
 keymap("v", "<leader>y", '"+ym', opts)
 keymap("n", "<leader><", '0f>ldt<', opts)
+keymap("n", "<leader><CR>", 'so ~/.config/nvim/init.lua', opts)
 vim.cmd "inoremap , ,<c-g>u"
 vim.cmd "inoremap . .<c-g>u"
 vim.cmd "inoremap ! !<c-g>u"

@@ -27,12 +27,14 @@ telescope.setup {
         ["<Up>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<C-h>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
+
+        ["<C-x>"] = actions.delete_buffer,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
@@ -48,7 +50,7 @@ telescope.setup {
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<C-h>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
@@ -70,6 +72,8 @@ telescope.setup {
 
         ["<C-u>"] = actions.preview_scrolling_up,
         ["<C-d>"] = actions.preview_scrolling_down,
+
+        ["<C-x>"] = actions.delete_buffer,
 
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
