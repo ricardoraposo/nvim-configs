@@ -46,19 +46,19 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "akinsho/toggleterm.nvim" -- Toggleterm is a terminal popup window integrate to nvim
   use "akinsho/bufferline.nvim"
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+  use "kyazdani42/nvim-tree.lua"
 
 	-- Colorschemes
-	use 'gruvbox-community/gruvbox'
-	use 'folke/tokyonight.nvim'
-  use 'lunarvim/darkplus.nvim'
-  use '4513ECHO/vim-colors-hatsunemiku'
+	-- use 'gruvbox-community/gruvbox'
+  use 'martinsione/darkplus.nvim'
+  use 'ellisonleao/gruvbox.nvim'
+  use 'folke/tokyonight.nvim'
 
 	-- cmp plugins
 	use 'hrsh7th/nvim-cmp'
@@ -66,6 +66,9 @@ return packer.startup(function(use)
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-nvim-lua'
+  use {'tzachar/cmp-tabnine', run='./install.sh'}
+  use 'onsails/lspkind-nvim'
+  use 'nvim-lua/lsp_extensions.nvim'
 	use 'saadparwaiz1/cmp_luasnip'
 
 	-- snippets
@@ -79,6 +82,7 @@ return packer.startup(function(use)
 
   -- Telescope & Harpoon
   use "nvim-telescope/telescope.nvim"
+  use 'nvim-telescope/telescope-media-files.nvim'
   use "ThePrimeagen/harpoon"
 
   -- Treesitter
@@ -87,6 +91,8 @@ return packer.startup(function(use)
     run = ":TSUpdate",
   }
   use "p00f/nvim-ts-rainbow"
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use "windwp/nvim-ts-autotag"
 
   -- Comments Plugin
   use 'JoosepAlviste/nvim-ts-context-commentstring'
@@ -95,6 +101,16 @@ return packer.startup(function(use)
   -- Git stuff
   use "lewis6991/gitsigns.nvim"
   use 'tpope/vim-fugitive'
+
+  -- Fast navigation
+  use {
+  'phaazon/hop.nvim',
+  branch = 'v1', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

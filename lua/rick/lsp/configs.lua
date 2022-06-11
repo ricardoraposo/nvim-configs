@@ -1,31 +1,42 @@
 local status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
 if not status_ok then
-  return
+	return
 end
 
 local lspconfig = require("lspconfig")
+local capabilities = require("rick.lsp.handlers").capabilities
+local on_attach = require("rick.lsp.handlers").on_attach
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "emmet_ls", "html", "bashls" }
+local servers = { "jsonls", "sumneko_lua", "tsserver", "cssls", "html", "bashls", "gopls", "prismals"}
 
-lsp_installer.setup {
-  ensure_installed = servers
-}
+lsp_installer.setup({
+	ensure_installed = servers,
+})
 
 for _, server in pairs(servers) do
-  local opts = {
-    on_attach = require("rick.lsp.handlers").on_attach,
-    capabilities = require("rick.lsp.handlers").capabilities,
-  }
-  local has_custom_opts, server_custom_opts = pcall(require, "rick.lsp.settings." .. server)
+	local opts = {
+		on_attach = on_attach,
+		capabilities = capabilities,
+	}
+	local has_custom_opts, server_custom_opts = pcall(require, "rick.lsp.settings." .. server)
 
-  if server == "emmet_ls" then
-    local emmet_ls_opts = require "rick.lsp.settings.emmet_ls"
-    opts = vim.tbl_deep_extend("force", emmet_ls_opts, opts)
-  end
+	lspconfig.emmet_ls.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = { "html", "css", "sass", "scss", "less" },
+		-- filetypes = { "html", "javascriptreact", "typescriptreact", "css", "sass", "scss", "less" },
+	})
 
-  if has_custom_opts then
-    opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
-  end
+	lspconfig.tailwindcss.setup({
+		on_attach = on_attach,
+		capabilities = capabilities,
+		filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
+	})
 
-  lspconfig[server].setup(opts)
+	if has_custom_opts then
+		opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
+	end
+
+	lspconfig[server].setup(opts)
 end

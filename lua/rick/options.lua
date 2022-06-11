@@ -6,10 +6,11 @@ local options = {
 	conceallevel = 0,                          -- so that `` is visible in markdown files
 	fileencoding = "utf-8",                    -- the encoding written to a file
 	hlsearch = false,                          -- highlight all matches on previous search pattern
+	incsearch = true,                          -- highlight all matches on previous search pattern
 	ignorecase = true,                         -- ignore case in search patterns
-	mouse = "a",                               -- allow the mouse to be used in neovim
+	-- mouse = "a",                               -- allow the mouse to be used in neovim
 	pumheight = 10,                            -- pop up menu height
-	showmode = true,                          -- we don't need to see things like -- INSERT -- anymore
+	showmode = false,                          -- we don't need to see things like -- INSERT -- anymore
 	showtabline = 0,                           -- always show tabs
 	smartcase = true,                          -- smart case
 	smartindent = true,                        -- make indenting smarter again
@@ -44,10 +45,7 @@ end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd "set iskeyword+=-"
--- vim.g.tokyonight_style = "night"
-vim.cmd "colorscheme gruvbox"
-vim.cmd "highlight LineNr guifg=#ffffff"
-vim.cmd "highlight Normal guibg=NONE ctermbg=NONE"
+vim.cmd "let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']"
 vim.cmd "let g:rainbow_active = 1"
 vim.cmd "set guicursor=i:block"
 
