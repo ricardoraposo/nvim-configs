@@ -20,9 +20,18 @@ vim.g.maplocalleader = " "
 --	 term mode = "t"
 --	 command mode = "c"
 
+-- Arrows are for pussies
+keymap("n", "<Up>", "<nop>", opts)
+keymap("n", "<Down>", "<nop>", opts)
+keymap("i", "<Up>", "<nop>", opts)
+keymap("i", "<Down>", "<nop>", opts)
+keymap("i", "<Left>", "<nop>", opts)
+keymap("i", "<Right>", "<nop>", opts)
+
+
 -- Normal
 -- Nvim Tree
-keymap("n", "<leader>n", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>n", ":Ex<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<M-Up>", ":resize +2<CR>", opts)
@@ -31,9 +40,10 @@ keymap("n", "<M-Left>", ":vertical resize +2<CR>", opts)
 keymap("n", "<M-Right>", ":vertical resize -2<CR>", opts)
 
 -- Buffer commands
--- keymap("n", "<C-[>", ":bnext<CR>", opts)
--- keymap("n", "<C-]>", ":bprevious<CR>", opts)
 keymap("n", "<leader>qb", ":bd<CR>", opts)
+keymap("n", "<Right>", ":bn<CR>", opts)
+keymap("n", "<Left>", ":bp<CR>", opts)
+keymap("n", "<leader><leader>", "<C-^>", opts) -- Toggle between last buffers
 
 -- Insert --
 -- Goes to insert mode

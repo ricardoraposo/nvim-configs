@@ -47,12 +47,10 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "akinsho/toggleterm.nvim" -- Toggleterm is a terminal popup window integrate to nvim
-  use "akinsho/bufferline.nvim"
   use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-  use "kyazdani42/nvim-tree.lua"
 
 	-- Colorschemes
 	-- use 'gruvbox-community/gruvbox'
@@ -82,7 +80,6 @@ return packer.startup(function(use)
 
   -- Telescope & Harpoon
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
   use "ThePrimeagen/harpoon"
 
   -- Treesitter
@@ -95,14 +92,13 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
 
   -- Comments Plugin
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'tpope/vim-commentary'
 
   -- Git stuff
   use "lewis6991/gitsigns.nvim"
   use 'tpope/vim-fugitive'
 
-  -- Fast navigation
+  -- Faster navigation
   use {
   'phaazon/hop.nvim',
   branch = 'v1', -- optional but strongly recommended
