@@ -14,6 +14,7 @@ local source_mapping = {
 	nvim_lsp = "[LSP]",
 	nvim_lua = "[Lua]",
 	cmp_tabnine = "[TN]",
+	treesitter = "[TS]",
 	luasnip = "[Snip]",
 	path = "[Path]",
 }
@@ -98,6 +99,7 @@ cmp.setup({
 		{ name = "cmp_tabnine" },
 		{ name = "nvim_lua" },
 		{ name = "luasnip" },
+		{ name = "treesitter" },
 		{ name = "buffer" },
 		{ name = "path" },
 	},

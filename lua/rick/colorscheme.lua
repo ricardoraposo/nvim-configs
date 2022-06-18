@@ -17,8 +17,8 @@
 -- As things should be in gruvbox
 vim.opt.background = "dark"
 vim.cmd "colorscheme gruvbox"
-vim.cmd "highlight LineNr guifg=#ffffff"
-vim.cmd "highlight Normal guibg=none"
+-- vim.cmd "highlight LineNr guifg=#ffffff"
+-- vim.cmd "highlight Normal guibg=none"
 
 -- As things should be in tokyonight
 -- vim.g.tokyonight_style = "storm"

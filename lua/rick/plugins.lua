@@ -68,6 +68,7 @@ return packer.startup(function(use)
   use 'onsails/lspkind-nvim'
   use 'nvim-lua/lsp_extensions.nvim'
 	use 'saadparwaiz1/cmp_luasnip'
+  use 'ray-x/cmp-treesitter'
 
 	-- snippets
 	use 'L3MON4D3/LuaSnip'
