@@ -93,7 +93,13 @@ return packer.startup(function(use)
   use "windwp/nvim-ts-autotag"
 
   -- Comments Plugin
-  use 'tpope/vim-commentary'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
+
 
   -- Git stuff
   use "lewis6991/gitsigns.nvim"
