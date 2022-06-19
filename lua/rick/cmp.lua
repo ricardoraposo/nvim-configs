@@ -60,11 +60,10 @@ cmp.setup({
     end,
   },
   sources = {
-    { name = "cmp_tabnine", max_item_count = 3 },
     { name = "nvim_lsp" },
+    { name = "cmp_tabnine", max_item_count = 3 },
     { name = "nvim_lua" },
-    { name = "luasnip", option = { use_show_condition = false } },
-    { name = "treesitter" },
+    { name = "luasnip"},
     { name = "buffer", keyword_length = 5 },
     { name = "path" },
   },
