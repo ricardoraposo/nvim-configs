@@ -21,5 +21,6 @@ null_ls.setup({
 		formatting.stylua.with({
       silent = true,
     }),
+    formatting.gofmt
 	},
 })
